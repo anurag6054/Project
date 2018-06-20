@@ -62,5 +62,5 @@ test:
 production:
   <<: *default
   database: customer_migration_tool_production
-  username: customer_migration_tool
+  username: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_USERNAME'] %>
   password: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_PASSWORD'] %>
