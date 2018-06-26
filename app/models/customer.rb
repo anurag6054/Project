@@ -1,3 +1,4 @@
+#ActiveRecord model for Master.Customer table
 class Customer < ActiveRecord::Base
   self.table_name = "Master.Customer"
   has_many :customer_locations, foreign_key: "Customer_ClusterID"

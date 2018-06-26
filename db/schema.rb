@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180626165743) do
+ActiveRecord::Schema.define(version: 20180626173707) do
 
   create_table "Customer", id: false, force: :cascade do |t|
   end
@@ -37,6 +37,10 @@ ActiveRecord::Schema.define(version: 20180626165743) do
   create_table "Workorders", id: false, force: :cascade do |t|
   end
 
+  create_table "authorized_users", force: :cascade do |t|
+    t.string "email", limit: 4000
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "provider",   limit: 4000
     t.string   "uid",        limit: 4000
@@ -46,4 +50,5 @@ ActiveRecord::Schema.define(version: 20180626165743) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
 end
