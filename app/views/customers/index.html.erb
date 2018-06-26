@@ -1,2 +1,11 @@
 <h1>Customers#index</h1>
 <p>Find me in app/views/customers/index.html.erb</p>
+
+  <% if current_user %>
+    <% current_user.attributes.each do |k,v| %>
+      <b> <%= k %>:</b> <%= v %> <br>
+    <% end %>
+    <br><%= link_to 'Logout', logout_path %>
+  <% else %>
+    <a href="/auth/google_oauth2">Sign in with google</a>
+  <% end %>

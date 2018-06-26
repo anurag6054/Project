@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'customers#index'
   get 'customers/index'
-
+  get 'login', to: redirect('/auth/google_oauth2'), as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -11,6 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180626165743) do
 
+  create_table "Customer", id: false, force: :cascade do |t|
+  end
+
+  create_table "Customer_CleanNames", id: false, force: :cascade do |t|
+  end
+
+  create_table "Customer_Final", id: false, force: :cascade do |t|
+  end
+
+  create_table "Customer_Location", id: false, force: :cascade do |t|
+  end
+
+  create_table "Location", id: false, force: :cascade do |t|
+  end
+
+  create_table "Round", id: false, force: :cascade do |t|
+  end
+
+  create_table "Service", id: false, force: :cascade do |t|
+  end
+
+  create_table "Workorders", id: false, force: :cascade do |t|
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "provider",   limit: 4000
+    t.string   "uid",        limit: 4000
+    t.string   "email",      limit: 4000
+    t.string   "first_name", limit: 4000
+    t.string   "last_name",  limit: 4000
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 end

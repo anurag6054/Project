@@ -32,6 +32,12 @@ gem "rubyzip"
 #Rspec library
 gem 'rspec-rails'
 
+#Authentication/Authorization
+gem 'omniauth-google-oauth2'
+
+#Figaro gem for setting up environment files
+gem 'figaro'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
