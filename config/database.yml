@@ -1,66 +1,122 @@
-# SQL Server (2005 or higher recommended)
+# SQLite version 3.x
+#   gem install sqlite3
 #
-# Install the adapters and driver
-#   gem install tiny_tds
-#   gem install activerecord-sqlserver-adapter
-#
-# Ensure the activerecord adapter and db driver gems are defined in your Gemfile
-#   gem 'tiny_tds'
-#   gem 'activerecord-sqlserver-adapter'
-#
-# You should make sure freetds is configured correctly first.
-# freetds.conf contains host/port/protocol_versions settings.
-# http://freetds.schemamania.org/userguide/freetdsconf.htm
-#
-# A typical Microsoft server
-#   [mssql]
-#   host = mssqlserver.yourdomain.com
-#   port = 1433
-#   tds version = 7.1
-
-# If you can connect with "tsql -S servername", your basic FreeTDS installation is working.
-# 'man tsql' for more info
-# Set timeout to a larger number if valid queries against a live db fail
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlserver
-  username: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_USERNAME'] %>
-  password: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_PASSWORD'] %>
-  timeout: 25
-  host: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_SERVER'] %>
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
 
 development:
   <<: *default
-  database: customer_migration_tool_development
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: customer_migration_tool_test
+  database: db/test.sqlite3
 
-# As with config/secrets.yml, you never want to store sensitive information,
-# like your database password, in your source code. If your source code is
-# ever seen by anyone, they now have access to your database.
-#
-# Instead, provide the password as a unix environment variable when you boot
-# the app. Read http://guides.rubyonrails.org/configuring.html#configuring-a-database
-# for a full rundown on how to provide these environment variables in a
-# production deployment.
-#
-# On Heroku and other platform providers, you may have a full connection URL
-# available as an environment variable. For example:
-#
-#   DATABASE_URL="sqlserver://myuser:mypass@localhost/somedatabase"
-#
-# You can use this database configuration with:
-#
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
 production:
   <<: *default
-  database: customer_migration_tool_production
-  username: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_USERNAME'] %>
-  password: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_PASSWORD'] %>
+  database: db/production.sqlite3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # SQL Server (2005 or higher recommended)
+# #
+# # Install the adapters and driver
+# #   gem install tiny_tds
+# #   gem install activerecord-sqlserver-adapter
+# #
+# # Ensure the activerecord adapter and db driver gems are defined in your Gemfile
+# #   gem 'tiny_tds'
+# #   gem 'activerecord-sqlserver-adapter'
+# #
+# # You should make sure freetds is configured correctly first.
+# # freetds.conf contains host/port/protocol_versions settings.
+# # http://freetds.schemamania.org/userguide/freetdsconf.htm
+# #
+# # A typical Microsoft server
+# #   [mssql]
+# #   host = mssqlserver.yourdomain.com
+# #   port = 1433
+# #   tds version = 7.1
+
+# # If you can connect with "tsql -S servername", your basic FreeTDS installation is working.
+# # 'man tsql' for more info
+# # Set timeout to a larger number if valid queries against a live db fail
+# #
+#  default: &default
+#    adapter: sqlserver
+#    username: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_USERNAME'] %>
+#    password: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_PASSWORD'] %>
+#    timeout: 25
+#    host: localhost
+#    port: 1433
+   
+   
+
+
+#    # adapter: sqlserver
+#    # username: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_USERNAME'] %>
+#    # password: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_PASSWORD'] %>
+#    # timeout: 25
+#    # host: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_SERVER'] %>
+
+
+# # development:
+#   <<: *default
+#   database: customer_migration_tool_development
+
+# # Warning: The database defined as "test" will be erased and
+# # re-generated from your development database when you run "rake".
+# # Do not set this db to the same as development or production.
+# # test:
+#   <<: *default
+#   database: customer_migration_tool_test
+
+# # As with config/secrets.yml, you never want to store sensitive information,
+# # like your database password, in your source code. If your source code is
+# # ever seen by anyone, they now have access to your database.
+# #
+# # Instead, provide the password as a unix environment variable when you boot
+# # the app. Read http://guides.rubyonrails.org/configuring.html#configuring-a-database
+# # for a full rundown on how to provide these environment variables in a
+# # production deployment.
+# #
+# # On Heroku and other platform providers, you may have a full connection URL
+# # available as an environment variable. For example:
+# #
+# #   DATABASE_URL="sqlserver://myuser:mypass@localhost/somedatabase"
+# #
+# # You can use this database configuration with:
+# #
+# #   production:
+# #     url: <%= ENV['DATABASE_URL'] %>
+# #
+# production:
+#   <<: *default
+#   database: customer_migration_tool_production
+#   username: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_USERNAME'] %>
+#   password: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_PASSWORD'] %>

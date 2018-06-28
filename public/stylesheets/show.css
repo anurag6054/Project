@@ -1,0 +1,41 @@
+.CustomerInfo{
+    text-align: center;
+    font-size:1.6vw;
+}
+
+#list{
+    width: 31.4vw !important;
+}
+#PreMigrate{
+    margin-bottom: 15px;
+    margin-right: 4px;
+    width:15vw;
+}
+#PostMigrate{
+    margin-bottom: 15px;
+    width:15vw;
+}
+#Migrate{
+    
+    margin-right: 4px;
+   
+    width:15vw;
+}
+#Update{
+    width:15vw;
+}
+ /* If the screen size is 601px wide or more,the font-size is 20px */
+@media screen and (min-width: 601px) {
+    .CustomerInfo {
+      font-size: 20px;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less,the font-size is 14px */
+  @media screen and (max-width: 600px) {
+    .CustomerInfo {
+        font-size: 14px;
+      }
+  }
+
+  
