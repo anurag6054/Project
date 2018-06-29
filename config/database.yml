@@ -21,7 +21,7 @@
 # If you can connect with "tsql -S servername", your basic FreeTDS installation is working.
 # 'man tsql' for more info
 # Set timeout to a larger number if valid queries against a live db fail
-#
+#12345
 default: &default
   adapter: sqlserver
   username: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_USERNAME'] %>
@@ -31,14 +31,14 @@ default: &default
 
 development:
   <<: *default
-  database: customer_migration_tool_development
+  database: SteritechStaging
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: customer_migration_tool_test
+  database: SteritechStaging
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -61,6 +61,4 @@ test:
 #
 production:
   <<: *default
-  database: customer_migration_tool_production
-  username: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_USERNAME'] %>
-  password: <%= ENV['CUSTOMER_MIGRATION_TOOL_DATABASE_PASSWORD'] %>
+  database: SteritechStaging

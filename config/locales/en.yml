@@ -27,3 +27,12 @@ en:
       sign_in_failure: "Sign in failed."
     authorization:
       not_authorized: "Sorry, you are not authorized to view this page."
+  customer:
+    export_pre_migration_data_success: "Successfully exported pre-migration data."
+    export_pre_migration_data_failure: "Failed to export pre-migration data."
+    export_post_migration_data_success: "Successfully exported post-migration data."
+    export_post_migration_data_failure: "Failed to export post-migration data."
+    update_customer_name_success: "Successfully updated customer name."
+    update_customer_name_failure: "Failed to update customer name."
+    set_migration_flag_success: "Successfully flagged customer for migration."
+    set_migration_flag_failure: "Failed to set migration flag."
