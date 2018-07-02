@@ -1,0 +1,23 @@
+.CustomerSearch{
+    text-align: center;
+    
+}
+#Search{
+  width: 24.48vw;
+}
+
+/* If the screen size is 601px wide or more,the font-size is 20px */
+@media screen and (min-width: 601px) {
+    .CustomerSearch {
+      font-size: 20px;
+    }
+  }
+  
+  /* If the screen size is 600px wide or less, the font-size of is 14px */
+  @media screen and (max-width: 600px) {
+    .CustomerSearch {
+        font-size: 14px;
+      }
+  }
+  
+  

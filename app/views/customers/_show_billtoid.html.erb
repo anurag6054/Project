@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag "show.css" %>
+<div class="container">
+	<div class="row">
+    <h3 class="CustomerInfo">BillToCode Information: </h3>
+    <div class="col-md-4 col-xs-4"></div>	
+		<ul class="list-group list-group-flush col-md-4 col-xs-4" id="list">
+			<li class="list-group-item">Group Account: 
+				<%= text_field_tag(:InfoGA) %> 
+			</li>
+			<li class="list-group-item">Customer Clean Name:
+				<%= text_field_tag(:InfoCCN) %> 
+			</li>
+			<li class="list-group-item">Customer Cluster ID:
+				<%= text_field_tag(:InfoCCI) %> 
+			</li>
+			<li class="list-group-item">No of BillTos in Group Account:
+				<%= text_field_tag(:InfoBGA) %> 
+			</li>
+			<li class="list-group-item">Status:
+				<%= text_field_tag(:InfoS) %> 
+			</li>
+		  </ul>
+	</div>
+</div>
+<div class="container">
+    <div class="row">
+    <div class="col-md-4 col-xs-4"></div>
+		<button type="button" id="PreMigrate" class="btn btn-primary">Export Pre-Migration Data</button>
+		<button type="button" id="PostMigrate" class="btn btn-primary">Export Post-Migration Data</button>
+	</div>
+    <div class="row">
+    <div class="col-md-4 col-xs-4"></div>	
+		<button type="button" id="Migrate" class="btn btn-primary">Migrate Account</button>
+		<button type="button" id="Update" class="btn btn-primary">Update Customer Name</button>
+	</div>
+</div>		

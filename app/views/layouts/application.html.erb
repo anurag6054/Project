@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CustomerMigrationTool</title>
+  <title>Rentokil Account Migration Admin</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <% flash.each do |key, value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
-  <% end %>
-
-  <% if current_user %>
-    <%= link_to 'Logout', :logout %>
-  <% else %>
-    <%= link_to 'Login', :login %>
-  <% end %>
-
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Rentokil Account Migration</a>
+    	</div>
+		<ul class="nav navbar-nav navbar-right">
+      		<li><a href="#"><span class="glyphicon glyphicon-user"></span> User:user@rentokil.com</a></li>
+      		<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    	</ul>
+	</div>
+</nav>
 <%= yield %>
 
 </body>
