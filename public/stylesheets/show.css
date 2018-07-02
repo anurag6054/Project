@@ -4,25 +4,46 @@
 }
 
 #list{
-    width: 31.4vw !important;
+    width: 31.37vw !important;
+}
+
+#InfoGA{
+    width: 15.4vw;
+    margin-left: 5vw;
+}
+#InfoCCN{
+    width: 15.4vw;
+    margin-left: 1.6vw;
+}
+#InfoCCI{
+    width: 15.4vw;
+    margin-left: 2.6vw;
+}
+#InfoBGA{
+    width: 12.7vw;
+    margin-left: .6vw;
+}
+#InfoS{
+    width: 15.4vw;
+    margin-left: 8.7vw;
 }
 #PreMigrate{
     margin-bottom: 15px;
     margin-right: 4px;
-    width:15vw;
+    width:14.8vw;
 }
 #PostMigrate{
     margin-bottom: 15px;
-    width:15vw;
+    width:14.8vw;
 }
 #Migrate{
     
     margin-right: 4px;
    
-    width:15vw;
+    width:14.8vw;
 }
 #Update{
-    width:15vw;
+    width:14.8vw;
 }
  /* If the screen size is 601px wide or more,the font-size is 20px */
 @media screen and (min-width: 601px) {

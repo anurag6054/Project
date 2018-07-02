@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+#Ignore freedts-1.00.21
+/freedts-1.00.21
+
+#Ignore database.yml
+/config/database.yml
