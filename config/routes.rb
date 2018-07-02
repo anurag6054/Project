@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  root 'customers#main'
+  root 'pages#login'
 
   get 'pages/login'
   get 'pages/logout'
   get 'pages/unauthorized'
 
+  get 'customers/index'
   get 'customers/main'
   get 'customers/search'
   get 'customers/export'

@@ -9,6 +9,9 @@ class CustomersController < ApplicationController
 
   def search
     @customer = Customer.find_by_BillToID_and_EndDate(params[:search],"99991231")
+    if !@customer
+      flash.now[:danger]= I18n.t('search.customer_search_no_results') + params[:search]
+    end
     render :main
   end
 

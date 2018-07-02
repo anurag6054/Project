@@ -36,3 +36,6 @@ en:
     update_customer_name_failure: "Failed to update customer name."
     set_migration_flag_success: "Successfully flagged customer for migration."
     set_migration_flag_failure: "Failed to set migration flag."
+  search:
+    customer_search_no_results: "No record exists for BillToID: "
+    customer_search_success: "Found record for BillToID: "

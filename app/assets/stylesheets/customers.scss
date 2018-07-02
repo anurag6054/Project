@@ -1,3 +1,50 @@
 // Place all the styles related to the Customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.flash_placeholder {
+  height: 4em;
+  width: 100%;
+}
+
+/* If the screen size is 992px wide or more */
+@media screen and (min-width: 992px) {
+
+    .no_padding {
+      padding: 0 !important;
+    }
+
+    .migrate-button {
+      margin: .5%;
+      width: 48%;
+    }
+
+    .search_billtoid.form-control {
+      width: 98% !important;
+    }
+
+    .search_billtoid.btn {
+      margin: 0 .5%;
+      width: 87%;
+    }
+
+  }
+
+/* If the screen size is 991px wide or less */
+@media screen and (max-width: 991px) {
+
+  .no_padding.form-group {
+    padding: 0 !important;
+  }
+
+  .migrate-button {
+    margin: 2px;
+    font-size: 12px !important;
+    width: 100%;
+  }
+
+  .search_billtoid {
+      width: 100% !important;
+      margin: .5% 0 0;
+  }
+}

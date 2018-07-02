@@ -9,6 +9,9 @@ class Customer < ActiveRecord::Base
 
   def export_pre_migration_data
     @customers_by_groupaccount = Customer.where(GroupAccount: self.GroupAccount)
+    #TODO build queries to mirror export pre-migration data stored procedures
+
+    #TODO use Axlsx library to export query output to Excel
 
     #TODO update to check for actual success/failure
     if true
@@ -20,6 +23,10 @@ class Customer < ActiveRecord::Base
 
   def export_post_migration_data
 
+    #TODO build queries to mirror export post-migration data stored procedures
+
+    #TODO use Axlsx library to export query output to Excel
+
     #TODO update to check for actual success/failure
     if true
       message = { "status" => "success", "message" => I18n.t('customer.export_post_migration_data_success') }
@@ -30,15 +37,7 @@ class Customer < ActiveRecord::Base
 
   def set_migration_flag
 
-    #TODO update to check for actual success/failure
-    if true
-      message = { "status" => "success", "message" => I18n.t('customer.update_customer_name_success') }
-    else
-      message = { "status" => "success", "message" => I18n.t('customer.update_customer_name_failure') }
-    end
-  end
-
-  def update_customer_name
+    #TODO build queries to mirror set migration flag stored procedure
 
     #TODO update to check for actual success/failure
     if true
@@ -48,6 +47,19 @@ class Customer < ActiveRecord::Base
     end
   end
 
+  def update_customer_name
+    begin
 
+    rescue
+    end
+    #TODO build query to update customer name
+
+    #TODO update to check for actual success/failure
+    if true
+      message = { "status" => "success", "message" => I18n.t('customer.update_customer_name_success') }
+    else
+      message = { "status" => "success", "message" => I18n.t('customer.update_customer_name_failure') }
+    end
+  end
 
 end

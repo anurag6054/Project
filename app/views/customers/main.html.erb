@@ -1,2 +1,5 @@
-<h1>Customers#index</h1>
-<p>Find me in app/views/customers/index.html.erb</p>
+<%= render 'search_billtoid' %>
+
+<% if !@customer.blank? %>
+  <hr><%= render 'show_billtoid', customer: @customer %>
+<% end %>
