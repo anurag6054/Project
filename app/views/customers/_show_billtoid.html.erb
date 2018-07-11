@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= stylesheet_link_tag "show.css" %>
 <div class="container">
 	<div class="row">
@@ -34,3 +35,55 @@
 		<button type="button" id="Update" class="btn btn-primary">Update Customer Name</button>
 	</div>
 </div>		
+=======
+<%= form_for :customer, method: "post", url:customers_export_path, name:nil do |form| %>
+
+	<div class="container">
+		<div class="row">
+
+			<ul class="list-group list-group-flush col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+
+		    <h4>BillToID Information: </h4>
+
+				<li class="list-group-item">
+					<%= form.label :GroupAccount, "Group Account:" %>
+				  <%= form.text_field :GroupAccount, id: :GroupAccount, class:"form-control", readonly: "readonly" %>
+				</li>
+
+				<li class="list-group-item">
+					<%= form.label :Company_Clean, "Customer Clean Name:" %>
+				  <%= form.text_field :Company_Clean, id: :Company_Clean, class:"form-control" %>
+				</li>
+
+				<li class="list-group-item">
+					<%= form.label :CustomerClusterID, "Customer Cluster ID:" %>
+				  <%= form.text_field :ClusterID, id: :CustomerClusterID, class:"form-control", readonly: "readonly" %>
+				</li>
+
+				<li class="list-group-item">
+					<%= form.label :NumberOfBillTos, "# of BillTos in Group Account:" %>
+				  <%= form.text_field :GroupAccount, id: :GroupAccount, class:"form-control", readonly: "readonly" %>
+				</li>
+
+				<li class="list-group-item">
+					<%= form.label :IsReadyForIntegration, "Status:" %>
+				  <%= form.text_field :IsReadyForIntegration, id: :IsReadyForIntegration, class:"form-control", readonly: "readonly" %>
+				</li>
+
+				<%= form.hidden_field :BillToID, id: :BillToID, class:"form-control"%>
+
+				<li class="list-group-item">
+					<%= form.submit "Export Pre-Migration Data", class: "btn btn-primary migrate-button", name: 'export_pre_migration_data' %>
+					<%= form.submit "Export Post-Migration Data", class: "btn btn-primary migrate-button", name: 'export_post_migration_data' %>
+
+					<%= form.submit 'Set Migration Flag', class: "btn btn-primary migrate-button", name: 'set_migration_flag' %>
+			    <%= form.submit 'Update Customer Name', class: "btn btn-primary migrate-button", name: 'update_customer_name' %>
+				</li>
+
+			</ul>
+
+		</div>
+	</div>
+
+<% end %>
+>>>>>>> ce5c857d358b36abc350fc2fb1c1032e32ba2bd2

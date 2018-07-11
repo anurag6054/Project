@@ -20,4 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  success: "Successfully exported file"
+  application:
+    authentication:
+      not_signed_in: "Please sign in with your Google account."
+      sign_in_success: "Successfully signed in."
+      sign_in_failure: "Sign in failed."
+    authorization:
+      not_authorized: "Sorry, you are not authorized to view this page."
+  customer:
+    export_pre_migration_data_success: "Successfully exported pre-migration data."
+    export_pre_migration_data_failure: "Failed to export pre-migration data."
+    export_post_migration_data_success: "Successfully exported post-migration data."
+    export_post_migration_data_failure: "Failed to export post-migration data."
+    update_customer_name_success: "Successfully updated customer name."
+    update_customer_name_failure: "Failed to update customer name."
+    set_migration_flag_success: "Successfully flagged customer for migration."
+    set_migration_flag_failure: "Failed to set migration flag."
+  search:
+    customer_search_no_results: "No record exists for BillToID: "
+    customer_search_success: "Found record for BillToID: "

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
   <title>Rentokil Account Migration Admin</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -19,6 +20,59 @@
 	</div>
 </nav>
 <%= yield %>
+=======
+  <head>
+    <title>Rentokil Account Migration Admin</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-</body>
+    <nav class="navbar navbar-default">
+    	<div class="container-fluid">
+    		<div class="navbar-header">
+          <%= link_to root_path, class: "navbar-brand" do %>Rentokil Account Migration<% end %>
+        </div>
+>>>>>>> ce5c857d358b36abc350fc2fb1c1032e32ba2bd2
+
+    		<ul class="nav navbar-nav navbar-right">
+
+          <!-- If user is signed in, display account information and Logout button -->
+          <% if current_user %>
+
+            <li>
+              <%= link_to '#' do %>
+                <i class="glyphicon glyphicon-glyhpicon-user"></i> <%= current_user.email %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to logout_path do %>
+                <i class="glyphicon glyphicon-log-out"></i> Logout
+              <% end %>
+            </li>
+
+          <!-- If user is not signed in, display login button -->
+          <% else %>
+            <li>
+              <%= link_to login_path do %>
+                <i class="glyphicon glyphicon-log-in"></i> Login
+              <% end %>
+            </li>
+          <% end %>
+
+        </ul>
+    	</div>
+    </nav>
+
+    <!-- Container for flash messages -->
+    <div class="flash_placeholder">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+
+    <%= yield %>
+
+  </body>
 </html>

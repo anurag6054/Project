@@ -1,0 +1,5 @@
+<%= render 'search_billtoid' %>
+
+<% if !@customer.blank? %>
+  <hr><%= render 'show_billtoid', customer: @customer %>
+<% end %>

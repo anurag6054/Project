@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= stylesheet_link_tag "search.css" %>
 <div class="container">
     <div class="row">
@@ -14,3 +15,25 @@
         </div>
 	</div>
 </div>
+=======
+<%= form_tag(customers_search_path, method: "get", class: "form-inline") do %>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="form-group col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 no_padding">
+        <h4>Enter BillToID:</h4>
+
+        <div class="col-xs-12 col-md-9 no_padding">
+          <%= text_field_tag :search, params[:search], placeholder: "Search for BillToID", class: "form-control search_billtoid" %>
+        </div>
+
+        <div class="col-xs-12 col-md-3 no_padding">
+          <%= submit_tag "Search", class: "btn btn-default search_billtoid", name: nil %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% end %>
+>>>>>>> ce5c857d358b36abc350fc2fb1c1032e32ba2bd2
