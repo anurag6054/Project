@@ -1,0 +1,86 @@
+wb = xlsx_package.workbook
+
+
+wb.add_worksheet(name: "BillTos_by_CompanyName") do |sheet|
+@customers_by_companyclean.each do |companyclean|
+    sheet.add_row [companyclean.Database, companyclean.ClusterID,
+                    companyclean.GroupAccount, 
+                    companyclean.BillToID, companyclean.BillToCode, 
+                    companyclean.Company_Clean]
+  end
+
+
+wb.add_worksheet(name: "By_All_GroupAccounts") do |sheet|
+@customers_by_groupaccount.each do |groupaccount|
+    sheet.add_row [groupaccount.Database, groupaccount.ClusterID, groupaccount.GroupAccount 
+			,groupaccount.BillToID, groupaccount.BillToCode, groupaccount.Company_Clean, 
+            groupaccount.Address, groupaccount.City, groupaccount.State
+			, groupaccount.StrategicAccountCustomerName, 
+            groupaccount.groupaccount.StrategicAccountGroupAccount
+			, groupaccount.IsUpdatedOB360, 
+            groupaccount.IsReadyForIntegration]
+  end
+
+
+wb.add_worksheet(name: "Account") do |sheet|
+@customers_by_currentaccount.each do |account|
+    sheet.add_row [account.Database, account.ClusterID, account.GroupAccount 
+			,account.BillToID, account.BillToCode, account.Company_Clean, 
+            account.Address, account.City, account.State
+			, account.StrategicAccountCustomerName, account.StrategicAccountGroupAccount
+			, account.IsUpdatedOB360, account.IsReadyForIntegration]
+  end
+
+
+wb.add_worksheet(name: "Locations") do |sheet|
+@locations.each do |location|
+    sheet.add_row [location.ClusterID, location.PrimaryDatabase, location.Company, 
+    location.BillToID, location.IndustryType, location.Address
+			, location.Address2, location.City, location.State, 
+            location.County, location.Zip, location.Country, location.Phone, 
+            location.StoreNumber, location.FSID
+			, location.PrimaryLocationID, location.PrimaryLocationCode, 
+            location.LocationSourceSystem ]
+  end
+
+
+wb.add_worksheet(name: "Services") do |sheet|
+@services.each do |service|
+    sheet.add_row [service.LocationServiceSetupFSID,service.ServiceDescription,
+    service.IsPrimaryService,service.KADROCustomerID
+      ,service.KADROCustomerID,service.KADROOrganizationID,service.KADROOrganizationName]
+  end  
+
+wb.add_worksheet(name: "Rounds") do |sheet|
+@rounds.each do |round|
+    sheet.add_row [round.CustomerID,round.RoundID,round.LanguageID,round.RoundName,round.AuditGroupCustomerID,
+                    round.AuditGroupID,round.LanguageTranslationID,round.ServiceSetupFSID,
+                    round.RoundStart,round.RoundEnd,round.LockdownDate,round.LastReauditDate,
+                    round.IsUpdatedSalesforce,round.IsUpdatedOB360,round.InsertBy,round.InsertDate,
+                    round.UpdateBy,round.UpdateDate,round.EffectiveDate,round.EndDate,round.IsReadyForIntegration]
+  end 
+
+wb.add_worksheet(name: "WorkOrders") do |sheet|
+@WorkOrders.each do |workorder|
+    sheet.add_row [workorder.WorkorderActivityId,workorder.WorkorderNumber,workorder.WorkorderActivityTypeId,
+    workorder.LocationCode,workorder.LocationClusterID,workorder.KADROLocationId,
+    workorder.ServiceSetupFSID,workorder.MasterServiceSetupID,
+    workorder.RoundId,workorder.RoundCustomerId,
+    workorder.RoundEffectiveDate,workorder.Status,workorder.WorkorderStatus,
+    workorder.AuditType,workorder.VisitId,workorder.ScheduledDate,
+    workorder.IsLocked,workorder.IsScheduled,workorder.AuditorFirstName,
+    workorder.AuditorLastName,workorder.AuditorEmail,workorder.AuditorId,
+    workorder.AuditorUserName,workorder.AuditorUserName,
+    workorder.AreSchedulableDatesOverridden,workorder.EarliestSchedulableDate,
+    workorder.LatestSchedulableDate,workorder.IsSchedulableRangeValid,workorder.WorkorderStatusId,
+    workorder.WorkorderCustomerId,workorder.AuditId,workorder.StartedDate,workorder.CompletedDate,
+    workorder.ElapsedTimeHours,workorder.BudgetedTimeHours,workorder.IsCorrectiveActionRequired,
+    workorder.SchedulablePeriodId,workorder.Score,workorder.AuditScoreTypeId,workorder.ReauditAuditCompletedDate,
+    workorder.RoutepointServiceType,workorder.TimeZone,workorder.RatingId,workorder.HierarchyId,
+    workorder.AnnounceStatus,workorder.LinkedWorkorderActivityId,workorder.LinkedWorkorderNumber,
+    workorder.ModifiedDate,workorder.ModifiedBy,workorder.IsUpdatedSalesforce,
+    workorder.IsUpdatedOB360,workorder.IsReadyForIntegration,workorder.InsertBy,
+    workorder.InsertDate,workorder.UpdateBy,workorder.UpdateDate,workorder.EffectiveDate,workorder.EndDate
+]
+  end         
+end  
